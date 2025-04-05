@@ -1,0 +1,24 @@
+name: "jb_involves_dbt"
+version: "1.0.0"
+
+profile: "jb_involves_dbt"
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  jb_involves_dbt:
+    staging:
+      +materialized: view
+      +schema: "SILVER"
+    marts:
+      +schema: "GOLD"
+      +materialized: table

@@ -1,0 +1,8 @@
+sources:
+  - name: bronze
+    tables:
+      - name: dim_pdv
+      - name: dim_produto
+      - name: dim_colaborador
+      - name: fato_coleta
+      - name: dim_pergunta
