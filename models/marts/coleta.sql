@@ -13,7 +13,7 @@ select id_coleta,
        canal_pdv,
        nome_colaborador
 from {{ ref('stg_fato_coleta') }} a 
-inner join {{ ref('stg_dim_pergunta') }} b on a.id_pergunta = b.id_pergunta
-inner join {{ ref('stg_dim_produto') }} c on a.id_produto = c.id_produto
-inner join {{ ref('stg_dim_pdv') }} d on a.id_pdv = d.id_pdv
-inner join {{ ref('stg_dim_colaborador') }} e on a.id_colaborador = e.id_colaborador
+left join {{ ref('stg_dim_pergunta') }} b on a.id_pergunta = b.id_pergunta
+left join {{ ref('stg_dim_produto') }} c on a.id_produto = c.id_produto
+left join {{ ref('stg_dim_pdv') }} d on a.id_pdv = d.id_pdv
+left join {{ ref('stg_dim_colaborador') }} e on a.id_colaborador = e.id_colaborador
